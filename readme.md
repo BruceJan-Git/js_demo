@@ -5,11 +5,11 @@
 ``` JS
   "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "custom": "webpack --config ./build/webpack.prod.js",
+      "build": "webpack --config ./build/webpack.prod.js",
       "dev": "webpack-dev-server --config ./build/webpack.dev.js",
       "start": "live-server ./dist"
   },
-  custom 上线模式打包
+  build 上线模式打包
   dev 开发编译模式
   start 运行打包好的文件
 ```
@@ -53,4 +53,30 @@
     // 配置文件合并依赖
     "webpack-merge": "^4.2.2"
   }
+```
+
+## babel js编译处理工具
+
+``` JS
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "edge": "17",
+          "firefox": "60",
+          "chrome": "67",
+          "safari": "11.1"
+        },
+        "useBuiltIns": "usage" // 有警告
+        // [https://github.com/babel/babel/issues/9751]
+      }
+    ]
+  ],
+    "plugins": [
+    "@babel/plugin-proposal-class-properties", // 支持更高级的ES6语法
+    "@babel/plugin-transform-runtime" // generator函数的支持 同时还需要安装运行时依赖 `npm i @babel/runtime -S`
+  ]
+}
 ```

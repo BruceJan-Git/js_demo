@@ -16,4 +16,12 @@ module.exports = merge(commonConfig,
       open: true,
       hot: true
     },
+    /**
+     * 使用 cheap 模式可以大幅提高 soure map 生成的效率
+     * 使用 module 可支持 babel 这种预编译工具，映射转换前的代码
+     * 使用 eval 方式可大幅提高持续构建效率。
+     * 使用 eval-source-map 模式可以减少网络请求。
+     */
+    // devtool: 'cheap-module-source-map',
+    devtool: 'cheap-module-eval-source-map',
   })

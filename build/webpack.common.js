@@ -8,11 +8,15 @@ const CopyWebapckPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    test: './src/test.js',
+  },
   output: {
     // 输出路径为绝对路径
     path: path.join(__dirname, '..', './dist'),
-    filename: 'bundle.js'
+    filename: '[name].js',
+    publicPath: '/'
   },
   // 插件配置规则
   plugins: [
@@ -67,6 +71,17 @@ module.exports = {
         test: /\.(woff|woff2|eot|svg|ttf)$/,
         use: 'url-loader'
       },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          // options: {
+          //   presets: ['@babel/env'],
+          //   plugins: [],
+          // }
+        },
+        exclude: /node_modules/,
+      }
     ]
   },
   // 模式

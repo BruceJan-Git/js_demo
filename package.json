@@ -5,14 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "custom": "webpack --config ./build/webpack.prod.js",
+    "build": "webpack --config ./build/webpack.prod.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "start": "live-server ./dist"
   },
   "keywords": [],
   "author": "Jan",
   "license": "ISC",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "[https://github.com/BruceJan-Git/js_demo.git]"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
@@ -30,6 +41,9 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@babel/runtime": "^7.9.2",
+    "core-js": "^2.6.11",
     "webpack-merge": "^4.2.2"
   }
 }

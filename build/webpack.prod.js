@@ -9,8 +9,8 @@ module.exports = merge(commonConfig, {
   output: {
     // path: path.join(__dirname, './dist'),
     path: path.resolve('./dist'),
-    filename: 'custom.js'
+    filename: '[name].js',
   },
   mode: 'production',
-  devtool: 'cheap-module-source-map',
+  // devtool: 'none',  不推荐生产模式使用source map
 })

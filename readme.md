@@ -78,5 +78,7 @@
     "@babel/plugin-proposal-class-properties", // 支持更高级的ES6语法
     "@babel/plugin-transform-runtime" // generator函数的支持 同时还需要安装运行时依赖 `npm i @babel/runtime -S`
   ]
+  // ES6/7中对象原型提供的新方法，babel默认情况无法转换，即使用了`transform-runtime`的插件也不支持转换原型上的方法,需要时用该模块
+  //  "@babel/polyfill": "^7.8.7"
 }
 ```

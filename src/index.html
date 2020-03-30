@@ -20,6 +20,19 @@
   <!-- input[placeholder="我是行内块元素inline-block"] -->
 
   <!-- div>ul>li{$}*4 -->
+  <script>
+    /**
+     * 1. var 和 function 关键字什么的声明,都存在预解析
+     * 2. 当同时存在预解析是,function的预解析优先级高
+     */
+    console.log(a);
+    var a = 1
+    function a() {
+      console.log('a')
+    }
+    console.log(a)
+
+  </script>
 </body>
 
 </html>

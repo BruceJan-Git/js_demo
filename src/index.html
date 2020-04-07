@@ -6,33 +6,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    #bubble li {
+      background: green;
+      margin: 10px 0;
+    }
+
+    .box3 {
+      position: relative;
+      background: #000;
+      width: 100px;
+      height: 100px;
+      top: 8px;
+    }
+  </style>
+  <style>
+
+  </style>
 </head>
 
 <body>
-  <!-- h$*6{标题$} -->
 
-  <!-- .box{我是一个布局盒子} -->
+  <!-- 动态创建元素(innerHTML方式创建) -->
+  <!-- <div id="todo">
+    <input type="button" value="添加">
+    <input type="text" value="请输入内容">
+    <div class="box">
+      <ul>
+        <li>1</li>
+      </ul>
+    </div>
+  </div> -->
 
-  <!-- .fa>.son${$}*3 -->
+  <!-- 动态创建元素(innerHTML方式创建) -->
+  <!-- <div class="data_table">
+    <input type="button" value="发布">
+    <input type="text">
+    <div class="content">
+      <ul></ul>
+    </div>
+  </div> -->
 
-  <!-- span{我是行内元素inline} -->
+  <!-- 动态创建表格 -->
+  <!-- <div class="table"></div> -->
 
-  <!-- input[placeholder="我是行内块元素inline-block"] -->
+  <!-- 
+      * 1. 通过事件对象获取当前元素以及其内容
+      * 2. 事件委托
+   -->
+  <!-- <ul id="bubble">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul> -->
 
-  <!-- div>ul>li{$}*4 -->
-  <script>
-    /**
-     * 1. var 和 function 关键字什么的声明,都存在预解析
-     * 2. 当同时存在预解析是,function的预解析优先级高
-     */
-    console.log(a);
-    var a = 1
-    function a() {
-      console.log('a')
-    }
-    console.log(a)
+  <!-- 通过事件对象的属性获取当前坐标位置 -->
+  <!-- <div class="box2"></div> -->
 
-  </script>
+  <!-- js动画 -->
+  <!-- <input type="button" value="向右走">
+  <input type="button" value="向左走">
+  <div class="box3"></div> -->
+
+  <!-- 轮播图 -->
+  <div id="bannerCenter">
+    <div class="bannerContent">
+      <div class="item">1<a href="javascript:"><img src="" alt=""></a></div>
+      <div class="item">2<a href="javascript:"><img src="" alt=""></a></div>
+      <div class="item">3<a href="javascript:"><img src="" alt=""></a></div>
+      <div class="item">1<a href="javascript:"><img src="" alt=""></a></div>
+    </div>
+    <div class="bannerBtnR"></div>
+    <div class="bannerBtnL"></div>
+    <div class="bannerDot">
+      <ul>
+        <li class="disable active"></li>
+        <li class="disable"></li>
+        <li class="disable"></li>
+      </ul>
+    </div>
+  </div>
+
 </body>
 
 </html>

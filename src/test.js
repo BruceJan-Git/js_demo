@@ -1,3 +1,21 @@
+export default function printMe() {
+  // console.log('I get called from print.js!');
+  console.log('Updating print.js.....')
+}
+// var time = new Date()
+// console.log(time.valueOf())
+// console.log(time.toLocaleTimeString())
+// console.log(time.toLocaleDateString())
+
+// var arr = [2,3,4,5,6]
+// console.log(typeof arr.valueOf())
+// console.log(arr.slice())
+// console.log(arr.splice())
+
+// var str = 'abcdefg'
+// console.log(str.slice())
+// console.log(str.split)
+
 /**
  * 1. ECMAscript是js的规范,主要包括js基本语法和基本数据类型
  * 2. js输入输出,输入? 就是赋值,定义变量,(通俗理解为...写准备要运行的代码),就是输入 输出?.log() .alert() .write() .pormpt() .confirm()
@@ -393,3 +411,18 @@
 //   console.log(time)
 // }
 // getTime()
+
+// console.log('****************************************')
+
+// document.write('<table border="1" width="900" border-collapse="collapse">')
+// for (var index = 1; index <= 9; index++) {
+//   document.write('<tr>')
+//   for (var j = 1; j <= index; j++) {
+//     document.write('<td>')
+//     document.write(`${j}X${index} = ${index * j} &nbsp`)
+//     document.write('</td>')
+//   }
+//   // document.write('</br>')
+//   document.write('<tr>')
+// }
+// document.write('</table>')

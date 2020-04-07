@@ -14,7 +14,8 @@ module.exports = merge(commonConfig,
     devServer: {
       port: 8081,
       open: true,
-      hot: true
+      hot: true,
+      clientLogLevel: 'silent' // 'none'
     },
     /**
      * 使用 cheap 模式可以大幅提高 soure map 生成的效率

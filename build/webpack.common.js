@@ -10,7 +10,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
   entry: {
     index: './src/index.js',
-    test: './src/test.js',
+    // test: './src/test.js',
   },
   output: {
     // 输出路径为绝对路径
@@ -31,7 +31,8 @@ module.exports = {
         to: 'assets'
       }
     ]),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   // 各个文件的配置处理
   module: {

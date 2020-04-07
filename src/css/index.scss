@@ -1,0 +1,146 @@
+/* 
+  小点样式使用伪元素,在js操作元素时,无法操作此类元素
+  解决: 加类名,在更改操作样式时,直接操作父元素类名
+*/
+// @import url(https://weloveiconfonts.com/api/?family=fontawesome);
+
+// 轮播图样式
+#bannerCenter {
+  position: relative;
+  margin  : 0 auto;
+  top     : 30px;
+  width   : 300px;
+  height  : 150px;
+  overflow: hidden;
+
+  // 轮播图容器
+  .bannerContent {
+    position: absolute;
+    width   : 1200px;
+    height  : 150px;
+    // 行内快元素代码换行生成空隙,其父元素fontSize设置为0解决
+    font-size: 0;
+
+    .item {
+      display       : inline-block;
+      height        : 150px;
+      width         : 300px;
+      text-align    : center;
+      line-height   : 150px;
+      vertical-align: middle;
+
+      &:nth-child(1) {
+        background: red;
+        font-size : 16px;
+      }
+
+      &:nth-child(2) {
+        background: blue;
+        font-size : 16px;
+      }
+
+      &:nth-child(3) {
+        background: yellow;
+        font-size : 16px;
+      }
+
+      &:nth-child(4) {
+        background: red;
+        font-size : 16px;
+      }
+    }
+  }
+
+  // 右按钮
+  .bannerBtnR {
+    position        : absolute;
+    right           : 0;
+    top             : 50%;
+    width           : 10px;
+    height          : 20px;
+    line-height     : 20px;
+    margin-top      : -10px;
+    background-color: rgba(158, 158, 189, .6);
+    cursor          : pointer;
+
+    &::before {
+      // content    : "\f054";
+      // font-family: 'FontAwesome', sans-serif;
+      content       : '▶';
+      font-size     : 16px;
+      color         : black;
+    }
+  }
+
+  // 左按钮
+  .bannerBtnL {
+    position        : absolute;
+    top             : 50%;
+    width           : 10px;
+    height          : 20px;
+    line-height     : 20px;
+    transform       : translateY(-50%);
+    background-color: rgba(158, 158, 189, .6);
+    cursor          : pointer;
+
+    &::before {
+      // content    : "\f053";
+      // font-family: 'FontAwesome', sans-serif;
+      position      : absolute;
+      content       : '◀';
+      font-size     : 16px;
+      left          : -3px;
+      color         : black;
+    }
+  }
+
+  // 轮播图小点
+  .bannerDot {
+    position   : absolute;
+    bottom     : 4px;
+    left       : 50%;
+    transform  : translateX(-50%);
+    width      : 90px;
+    height     : 10px;
+    background : rgba(158, 158, 189, .6);
+    text-align : center;
+    line-height: 10px;
+
+    ul {
+      margin   : 0;
+      padding  : 0;
+      font-size: 0;
+
+      li {
+        position     : relative;
+        display      : inline-block;
+        list-style   : none;
+        margin       : 0 5px;
+        width        : 8px;
+        height       : 8px;
+        border       : 1px solid #000;
+        border-radius: 50%;
+        cursor       : pointer;
+
+        &.disable::before {
+          content      : '';
+          position     : absolute;
+          width        : 4px;
+          height       : 4px;
+          left         : 0;
+          top          : 0;
+          right        : 0;
+          bottom       : 0;
+          margin       : auto;
+          background   : #000;
+          border-radius: 50%;
+          display      : none;
+        }
+
+        &.active::before {
+          display: block;
+        }
+      }
+    }
+  }
+}
